@@ -1,21 +1,18 @@
 module PiCamera
 
-using PyCall
-math = pyimport("math")
-@show math.sin(math.pi / 4)
+export preview
 
-#=using PyCall, Images, CoordinateTransformations, ImageView
+using VideoIO, ImageView
 
-from io import BytesIO
-from time import sleep
-from picamera import PiCamera
-
-# Create an in-memory stream
-my_stream = BytesIO()
-camera = PiCamera()
-camera.start_preview()
-# Camera warm-up time
-sleep(2)
-camera.capture(my_stream, 'jpeg')=#
+function preview()
+    cam = VideoIO.opencamera()
+    img = read(cam)
+    i = imshow(img)
+    c = i["gui"]["canvas"]
+    while true 
+        img = read(cam)
+        imshow!(c, img)
+    end
+end
 
 end # module

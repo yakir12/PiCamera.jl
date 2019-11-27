@@ -2,24 +2,16 @@ module PiCamera
 
 export preview
 
-using VideoIO, ImageView
+using VideoIO, CoordinateTransformations, Interact, Observables, AbstractPlotting, GLMakie
+
+# cam_rotation = slider(range(0, stop = 2π, length = 100))
+# cam_position = slider(range(0, stop = 2π, length = 100))
+# cam_transform = PerspectiveMap() ∘ inv(AffineMap(cam_rotation, cam_position))
+# screen_points = map(cam_transform, points)
 
 function preview()
     cam = VideoIO.opencamera()
-    img = read(cam)
-    i = imshow(img)
-        sleep(0)
-    canvas = i["gui"]["canvas"]
-for i in 1:50
-        img = read(cam)
-	@show i
-end
-    @async while true
-        img = read(cam)
-        imshow!(canvas, img)
-        sleep(0)
-    end
-    return cam
+    VideoIO.playvideo(cam)
 end
 
 end # module

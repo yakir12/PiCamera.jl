@@ -9,6 +9,7 @@ CoordinateTransformations = "150eb455-5306-5404-9cee-2592286d6298"
 GLFW = "f7f18e0c-5ee9-5ccd-a5bf-e8befd85ed98"
 GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
 Interact = "c601a237-2ae4-5e1e-952c-7a85b0c7eef1"
+Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
 Observables = "510215fc-4207-5dde-b226-833fc4488ee2"
 VideoIO = "d6d074c3-1acf-5d4c-9a43-ef38773959a2"
 

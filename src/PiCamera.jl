@@ -2,7 +2,7 @@ module PiCamera
 
 export preview
 
-using VideoIO, CoordinateTransformations, Interact, Observables, AbstractPlotting, GLMakie
+using AbstractPlotting, GLMakie, Makie, VideoIO, CoordinateTransformations, Interact, Observables
 
 # cam_rotation = slider(range(0, stop = 2π, length = 100))
 # cam_position = slider(range(0, stop = 2π, length = 100))
